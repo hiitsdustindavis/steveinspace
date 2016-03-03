@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  background-image: url("../img/space.jpg");
+  background-size: cover;
+  position: relative;
+  height: 80vh;
+  padding: 300px 0 0 0;
+}
+.steve-wrapper {
+  width: 300px;
+  height: 2000px;
+  top: 7vh;
+  left: 42vw;
+  position: absolute;
+  animation: wrapper 5s linear infinite alternate;
+  transform-origin: 50% 100%;
+  z-index: 1;
+}
+.steve {
+  position: absolute;
+  animation: steve 1.5s ease-in-out infinite, steve-spin 5s linear infinite alternate;
+}
+
+.astronaut1 {
+  position: absolute;
+  left: 100px;
+  animation: bounce 3s ease-in-out infinite;
+
+}
+
+.astronaut2 {
+  position: absolute;
+  right: 100px;
+  animation: bounce 4.2s ease-in-out infinite;
+}
+
+.x-files {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 300px;
+  height: 300px;
+  animation-play-state: paused;
+  animation: x-files-out 1.5s ease-in-out;
+  &:hover img {
+    animation: x-files-in 3s ease-in-out both;
+  }
+
+  img {
+    position: absolute;
+    bottom: -250px;
+    left: 0;
+  }
+}
+
+.alien {
+  position: absolute;
+  top: 20vh;
+  left:40vw;
+  height: 400px;
+  width: 250px;
+
+  img {
+    transform: rotateY(90deg);
+    transition: all 2s linear;
+  }
+  &:hover img{
+    transform: rotateY(0);
+  }
+}
+
+.sputnik-wrap {
+  position: absolute;
+  width: 1800px;
+  top: -400px;
+  left: -400px;
+    overflow: visible;
+    transform-origin: 0 0;
+    animation: sputnik-wrap 6s linear infinite;
+    .sputnik {
+      float: right;
+    }
+    img {
+      width: 150px;
+      animation: sputnik-scale 2s 3s linear infinite alternate;
+
+    }
+}
+
+  @keyframes bounce {
+    50%   { transform: translate(0, -9px)}
+  }
+
+  @keyframes steve {
+    50%  { transform: translate(0, -60px),}
+  }
+
+  @keyframes steve-spin {
+    100% { transform: rotateZ(1080deg)}
+  }
+
+  @keyframes wrapper {
+    0%   { transform: rotate(-30deg)}
+    100% { transform: rotate(30deg)}
+  }
+
+  @keyframes sputnik-wrap {
+    0% {transform: rotate(360deg);}
+  }
+
+  @keyframes sputnik-scale {
+      100% { transform: scale(4);}
+  }
+
+  @keyframes x-files-in {
+    0%   { transform: translate(0,0) }
+    40%  { transform: translate(0,-260px) }
+    60% { transform: translate(0,-230px) }
+    80%  { transform: translate(0,-250px) }
+    100% { transform: translate(0,-240px) }
+  }
+
+  @keyframes x-files-out {
+    0% { transform: translate(0,-240px) }
+    40%  { transform: translate(0,-250px) }
+    60% { transform: translate(0,-230px) }
+    80%  { transform: translate(0,-260px) }
+    100%   { transform: translate(0,0) }
+
+
+
+  }
